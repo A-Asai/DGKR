@@ -1,0 +1,20 @@
+<tool id="ccat1" name="Concatenate datasets(Column)" version="1.0.0">
+    <description>cbind datasets.</description>
+    <command interpreter="python">
+        ccat.py
+        $out_file1
+        $input1
+        #for $q in $queries
+            ${q.input2}
+        #end for
+    </command>
+    <inputs>
+        <param name="input1" type="data" label="Concatenate Dataset"/>
+        <repeat name="queries" title="Dataset">
+            <param name="input2" type="data" label="Select" />
+        </repeat>
+    </inputs>
+    <outputs>
+        <data name="out_file1" format="input" metadata_source="input1"/>
+    </outputs>
+</tool>

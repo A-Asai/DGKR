@@ -1,0 +1,13 @@
+<tool id="helloworld" name="HelloWorld(R)" version="1.0.0">
+  <description>Say "Hello World!!" by R.</description>
+  <command>
+    Rscript '$__tool_directory__/helloworld_r.R' '$args1' '$args2'
+  </command>
+  <inputs>
+    <param name="args1" type="integer" value="1" label="Number of times" help="How many times?" />
+  </inputs>
+  <outputs>
+    <data format="txt" name="args2" label="${tool.name} on ${on_string}" />
+  </outputs>
+</tool>
+
